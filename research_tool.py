@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Superblock Research Engine — Tau layer out.
 
-Run: python research_tool.py <geometry|sparc|desi|cms|casimir|bounce|corpus>
+Run: python research_tool.py <geometry|sparc|desi|cms|casimir|bounce|corpus|neutron>
 """
 
 from __future__ import annotations
@@ -10,7 +10,7 @@ import argparse
 import json
 import sys
 
-from sb_engine import bounce, casimir, cms, corpus, desi, geometry, sparc
+from sb_engine import bounce, casimir, cms, corpus, desi, geometry, neutron, sparc
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -20,6 +20,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("geometry")
     sub.add_parser("corpus")
     sub.add_parser("bounce")
+    sub.add_parser("neutron")
 
     p_sp = sub.add_parser("sparc")
     p_sp.add_argument("--beta2", type=float, default=sparc.D_BETA2)
@@ -58,6 +59,8 @@ def main(argv: list[str] | None = None) -> int:
     elif args.cmd == "bounce":
         cyc = bounce.bounce_cycle()
         payload = {"canon": cyc["canon"], "n": len(cyc["frames"])}
+    elif args.cmd == "neutron":
+        payload = neutron.snapshot()
     else:
         parser.error(args.cmd)
         return 2

@@ -35,3 +35,4 @@ Live engines may only see **IN** entries.
 
 - Three-pair inverse-time antimatter envelope (BU M+) — neither accepted nor rejected
 - φ-contact — open non-binding question
+- Neutron hidden-domain branch: BR_0 = 1/(γ_d γ_s) = 0.010616, ε ∈ {1/7, 2/7} — test module, not IN. J-PARC 877.2 s is a live fail of s=0 appearance. See Personal Files/2026-09-22_derived_BRX_and_epsilon.md
