@@ -1,45 +1,71 @@
 #!/usr/bin/env python3
-"""
-Tau-Superblock Research Engine — thin entry point.
+"""Superblock Research Engine — Tau layer out.
 
-Each submenu lives in its own ``*_extension.py`` module.  Shared curses UI,
-menu tree, and run orchestration live under ``tav_research/``.
-
-Run:  ./venv/bin/python research_tool.py
-
-Remote AI: configure keys in config/api_keys.env (see api_keys.env.example).
-Menu domain **Remote AI Processing** — test connections, analyze artifacts, custom prompts.
-Post-run review: set **AI verbose review = yes** on any module entry form.
+Run: python research_tool.py <geometry|sparc|desi|cms|casimir|bounce|corpus>
 """
 
 from __future__ import annotations
 
-# =============================================================================
-# BLOCK: Backward-compatible re-exports (mock_generator, desi_dashboard, …)
-# =============================================================================
+import argparse
+import json
+import sys
 
-from tav_research.curses_shell import (  # noqa: F401
-    ROOT_TITLE,
-    _safe_addstr,
-    append_nav,
-    draw_menu,
-    select_n_interactive,
-    show_entry_form,
-)
-from tav_research.n_selector import should_offer_n_selector  # noqa: F401
-from tav_research.registry import (  # noqa: F401
-    MODULE_EXTENSIONS,
-    module_entry_fields,
-    module_entry_instructions,
-)
+from sb_engine import bounce, casimir, cms, corpus, desi, geometry, sparc
 
-# =============================================================================
-# BLOCK: Main
-# =============================================================================
 
-from tav_research.runner import load_api_keys, main
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Superblock / Mirron research engine (no Tau)")
+    sub = parser.add_subparsers(dest="cmd", required=True)
 
-load_api_keys()
+    sub.add_parser("geometry")
+    sub.add_parser("corpus")
+    sub.add_parser("bounce")
+
+    p_sp = sub.add_parser("sparc")
+    p_sp.add_argument("--beta2", type=float, default=sparc.D_BETA2)
+    p_sp.add_argument("--phase", type=float, default=0.4)
+
+    p_d = sub.add_parser("desi")
+    p_d.add_argument("--gamma", type=float, default=None)
+
+    p_c = sub.add_parser("cms")
+    p_c.add_argument("--n", type=int, default=4000)
+    p_c.add_argument("--amp", type=float, default=0.18)
+    p_c.add_argument("--seed", type=int, default=7)
+
+    p_ca = sub.add_parser("casimir")
+    p_ca.add_argument("--amp", type=float, default=0.04)
+    p_ca.add_argument("--phase", type=float, default=0.0)
+
+    args = parser.parse_args(argv)
+    if args.cmd == "geometry":
+        payload = geometry.snapshot()
+    elif args.cmd == "corpus":
+        print(corpus.text())
+        return 0
+    elif args.cmd == "sparc":
+        payload = sparc.run_sparc(beta2=args.beta2, phase=args.phase)
+        payload = {k: v for k, v in payload.items() if k != "points"} | {
+            "n_points": len(payload["points"])
+        }
+    elif args.cmd == "desi":
+        g = args.gamma if args.gamma is not None else desi.calibrate_gamma()
+        payload = desi.sound_horizon(g)
+    elif args.cmd == "cms":
+        payload = cms.run_cms(n=args.n, amp=args.amp, seed=args.seed)
+    elif args.cmd == "casimir":
+        payload = casimir.shape_battery(amp=args.amp, phase=args.phase)
+    elif args.cmd == "bounce":
+        cyc = bounce.bounce_cycle()
+        payload = {"canon": cyc["canon"], "n": len(cyc["frames"])}
+    else:
+        parser.error(args.cmd)
+        return 2
+
+    json.dump(payload, sys.stdout, indent=2)
+    sys.stdout.write("\n")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
