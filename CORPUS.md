@@ -6,7 +6,7 @@ Live engines may only see **IN** entries.
 
 - Six co-located 3+1D domains on an internal supersphere
 - V_orb Scheme A (PDG on m_u; E6 ⊂ E8 axes). Prime = u at rest
-- Mirron / Planck–Kerr 2-surface. Never a soliton. r_M = λ_313 ≈ 0.630 fm
+- Mirron / Planck–Kerr 2-surface. r_M = λ_313 ≈ 0.630 fm
 - ell_P is seed, not clock radius
 - TEP floor Δ = ħc / r_M = 313.1 MeV on (domain_i, phase_k) — **protocol step 1**, Compton dual of r_M, not a derived uniqueness theorem
 - 8-phase clockwork Aut(O) ≅ G₂; Φ₈ = Past ⇄ Future inversion
@@ -28,7 +28,6 @@ Live engines may only see **IN** entries.
 - WilfiCon eTB/eWS as a module (Zenodo 10.5281/zenodo.17160617)
 - r_M = ell_P as clock radius
 - Casimir bound-energy residual search (dropped 2026-09-15)
-- Soliton language for Mirron
 - Berard Framework as a Superblock module
 - Any claim that 313.1 MeV is the unique residue of a named Vălean weight-6 identity plus r_M (no such theorem)
 
