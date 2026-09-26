@@ -31,6 +31,7 @@ Live engines may only see **IN** entries.
 - Berard Framework as a Superblock module
 - Any claim that 313.1 MeV is the unique residue of a named Vălean weight-6 identity plus r_M (no such theorem)
 - Informal Vălean weight-6 identity as a TEP generator (external Euler-sum literature only; ρ ~ O(1), no energy map)
+- 2025-11-25 sketch: glueball = 313 MeV; r_M = ell_P as clock; Δ from E8 index / η = 240 / γ=1.0607 drift; φ-radian plaquette as an engine
 
 ## HOLD
 
