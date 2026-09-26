@@ -1,4 +1,4 @@
-# Superblock / Mirron corpus ledger (2026-09-22)
+# Superblock / Mirron corpus ledger (2026-09-26)
 
 Live engines may only see **IN** entries.
 
@@ -8,7 +8,7 @@ Live engines may only see **IN** entries.
 - V_orb Scheme A (PDG on m_u; E6 ⊂ E8 axes). Prime = u at rest
 - Mirron / Planck–Kerr 2-surface. Never a soliton. r_M = λ_313 ≈ 0.630 fm
 - ell_P is seed, not clock radius
-- TEP floor 313.1 MeV on (domain_i, phase_k)
+- TEP floor Δ = ħc / r_M = 313.1 MeV on (domain_i, phase_k) — **protocol step 1**, Compton dual of r_M, not a derived uniqueness theorem
 - 8-phase clockwork Aut(O) ≅ G₂; Φ₈ = Past ⇄ Future inversion
 - n_hier Superblock hierarchical binding (not log7 of a Tau cylinder)
 - CCC bounce + Mirron / Planck–Kerr dynamic refresh
@@ -30,9 +30,17 @@ Live engines may only see **IN** entries.
 - Casimir bound-energy residual search (dropped 2026-09-15)
 - Soliton language for Mirron
 - Berard Framework as a Superblock module
+- Any claim that 313.1 MeV is the unique residue of a named Vălean weight-6 identity plus r_M (no such theorem)
 
 ## HOLD
 
 - Three-pair inverse-time antimatter envelope (BU M+) — neither accepted nor rejected
 - φ-contact — open non-binding question
 - Neutron hidden-domain branch: BR_0 = 1/(γ_d γ_s) = 0.010616, ε ∈ {1/7, 2/7} — test module, not IN. J-PARC 877.2 s is a live fail of s=0 appearance. See Personal Files/2026-09-22_derived_BRX_and_epsilon.md
+
+## OPEN (not engines)
+
+- Which series would map a Vălean / weight-6 object onto Δ
+- Which dimensionless factor would sit between that series and 313.1 MeV
+- Why the IR unit is MeV (hadronic / constituent island) rather than another IR scale
+- See Personal Files/2026-09-26_TEP_floor_protocol_step1_no_Valean_uniqueness.md
