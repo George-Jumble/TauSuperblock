@@ -30,6 +30,7 @@ Live engines may only see **IN** entries.
 - Casimir bound-energy residual search (dropped 2026-09-15)
 - Berard Framework as a Superblock module
 - Any claim that 313.1 MeV is the unique residue of a named Vălean weight-6 identity plus r_M (no such theorem)
+- Informal Vălean weight-6 identity as a TEP generator (external Euler-sum literature only; ρ ~ O(1), no energy map)
 
 ## HOLD
 
@@ -37,9 +38,13 @@ Live engines may only see **IN** entries.
 - φ-contact — open non-binding question
 - Neutron hidden-domain branch: BR_0 = 1/(γ_d γ_s) = 0.010616, ε ∈ {1/7, 2/7} — test module, not IN. J-PARC 877.2 s is a live fail of s=0 appearance. See Personal Files/2026-09-22_derived_BRX_and_epsilon.md
 
+## CLOSED CONVENTION (not an engine)
+
+- Q3a: MeV is the PDG / lab unit. 0.3131 GeV is the same lock.
+
 ## OPEN (not engines)
 
-- Which series would map a Vălean / weight-6 object onto Δ
-- Which dimensionless factor would sit between that series and 313.1 MeV
-- Why the IR unit is MeV (hadronic / constituent island) rather than another IR scale
-- See Personal Files/2026-09-26_TEP_floor_protocol_step1_no_Valean_uniqueness.md
+- Q3b: unique geometric construction of r_M or Λ from IN data (Program L 2026-09-26 failed uniqueness: e^45 → 349.5 MeV, 2^65 → 330.9 MeV, e^46 → 128.6 MeV; none selected)
+- Which dimensionless factor f (Slot 2 failed F2: IN alphabet is not a singleton)
+- Which series + Res maps to an energy without taking Δ as input (E6 remains a form, not an engine)
+- See Personal Files/2026-09-26_how_to_close_TEP_OPEN_slots.md and Personal Files/2026-09-26_TEP_slots_execution_Program_L.md
